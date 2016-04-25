@@ -1,0 +1,75 @@
+@import "var.less";
+*{
+  box-sizing: border-box;
+}
+.pad(@padding){
+  padding-left: @padding;
+  padding-right: @padding;
+}
+.container{
+  &{
+    height: auto;
+    margin-left: auto!important;
+    margin-right: auto!important;
+    .pad(@padding);
+  }
+  &-fluid{
+    height:auto;
+    .pad(@padding);
+  }
+  & .row,&-fluid .row{
+    display: block;
+    margin-left: -@padding;
+    margin-right: -@padding;
+  }
+  &:after,&-fluid:after{
+    content: "";
+    display: block;
+    clear: both;
+    height: 0;
+    line-height: 0;
+    font-size: 0;
+  }
+}
+.grid(@type,@i:1) when (@i<=@col){
+  .col-@{type}-@{i}{
+    width: 100%/@col*@i;
+    display: block;
+    float: left;
+    .pad(@padding);
+  }
+  .grid(@type,@i+1);
+}
+.grid(xs);
+.g(@width,@name){
+  @media screen and (min-width: @width){
+    .container{
+      width: @width - @padding*2;
+    }
+    .grid(@name);
+  }
+}
+
+.g(@smscreen,sm);
+.g(@mdscreen,md);
+.g(@lgscreen,lg);
+@media screen and (max-width:@smscreen){
+  .hidden-xs{
+    display: none;
+  }
+}
+@media screen and (min-width:@smscreen) and (max-width:@mdscreen ){
+  .hidden-sm{
+    display: none;
+  }
+}
+@media screen and (min-width:@mdscreen) and (max-width:@lgscreen ){
+  .hidden-md{
+    display: none;
+  }
+}
+@media screen and (min-width:@lgscreen){
+  .hidden-lg{
+    display: none;
+  }
+}
