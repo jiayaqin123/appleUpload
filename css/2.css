@@ -2,10 +2,6 @@
   width: 100%;
   height: 44px;
   background: rgba(0, 0, 0, 0.8);
-  position: relative;
-  left: 0;
-  top: 0;
-  z-index: 1;
 }
 @media screen and (min-width: 767px) {
   .nav .min-nav {
@@ -86,6 +82,8 @@
     display: none;
     background: #000;
     padding-bottom: 47px;
+    position: relative;
+    z-index: 1;
   }
   .nav .max-nav a {
     display: block;
@@ -126,12 +124,10 @@
 }
 .nav2 {
   height: 52px;
-  background: red;
 }
 .wheel {
   width: 100%;
   overflow: hidden;
-  background: red;
   position: relative;
 }
 .wheel .imgBox {
@@ -145,7 +141,6 @@
   position: absolute;
   left: 0;
   top: 0;
-  background-size: cover;
 }
 .wheel .imgBox a:nth-of-type(1) {
   background: url("../img/wheel/banner1.jpg") center center;
@@ -190,7 +185,7 @@
   border: 1px solid #08c;
   background: #fff;
 }
-.wheel .btnLR {
+/*.wheel .btnLR{
   width: 100%;
   height: 75px;
   position: absolute;
@@ -198,17 +193,29 @@
   top: 50%;
   margin-top: -30px;
 }
-.wheel .btnLR .btnLeft {
+.wheel .btnLR .btnLeft{
   width: 75px;
   height: 75px;
   float: left;
   margin-left: 35px;
 }
-.wheel .btnLR .btnRight {
+.wheel .btnLR .btnRight{
   width: 75px;
   height: 75px;
   float: right;
   margin-right: 35px;
+}*/
+.wheel .btnLR {
+  width: 100%;
+  position: absolute;
+  left: 0;
+  top: 50%;
+}
+.wheel .btnLR .btnLeft {
+  float: left;
+}
+.wheel .btnLR .btnRight {
+  float: right;
 }
 .wheel .btnLR a {
   display: block;
@@ -227,6 +234,20 @@
   .wheel .imgBox a {
     height: 650px;
   }
+  .wheel .btnLR {
+    height: 75px;
+    margin-top: -30px;
+  }
+  .wheel .btnLR .btnLeft {
+    width: 75px;
+    height: 75px;
+    margin-left: 35px;
+  }
+  .wheel .btnLR .btnRight {
+    width: 75px;
+    height: 75px;
+    margin-right: 35px;
+  }
 }
 @media screen and (max-width: 767px) {
   .wheel .imgBox {
@@ -234,6 +255,20 @@
   }
   .wheel .imgBox a {
     height: 391px;
+  }
+  .wheel .btnLR {
+    height: 30px;
+    margin-top: -15px;
+  }
+  .wheel .btnLR .btnLeft {
+    width: 30px;
+    height: 30px;
+    margin-left: 15px;
+  }
+  .wheel .btnLR .btnRight {
+    width: 30px;
+    height: 30px;
+    margin-right: 15px;
   }
 }
 .four {
@@ -412,7 +447,7 @@
 @media screen and (min-width: 767px) {
   .footer2 {
     max-width: 980px;
-    padding: 0px 22px 5;
+    padding: 0px 22px 5px;
   }
 }
 @media screen and (max-width: 767px) {
@@ -420,9 +455,6 @@
     width: 100%;
     padding: 32px 16px 0;
   }
-}
-.footer3-out{
-  padding-bottom: 20px;
 }
 .footer3-out a {
   color: #999;
@@ -434,7 +466,6 @@
 .footer3-out .footer2 {
   border: none;
 }
-
 .footer23-out {
   width: 100%;
   background: #f2f2f2;
@@ -446,54 +477,53 @@
   color: #999;
   line-height: 20px;
 }
-.footer23-1 span{
+.footer23-1 span {
   display: inline-block;
   width: 16px;
   height: 16px;
   background: url("../img/footer23/1.png");
 }
-.footer23-22 a{
+.footer23-22 a {
   direction: inline-block;
   padding-right: 12px;
   border-right: 1px solid #d6d6d6;
   margin-right: 10px;
   color: #999;
 }
-.footer23-22 a:hover{
+.footer23-22 a:hover {
   color: #555;
   text-decoration: underline;
 }
 @media screen and (min-width: 767px) {
   .footer23 {
     max-width: 980px;
-    padding: 0px 22px 5;
+    padding: 0px 22px 5px;
   }
-  .footer23-1{
+  .footer23-1 {
     float: right;
   }
-  .footer23-21{
+  .footer23-21 {
     float: left;
   }
-  .footer23-22{
+  .footer23-22 {
     float: left;
   }
 }
 @media screen and (max-width: 767px) {
-  .footer23-out{
+  .footer23-out {
     margin: -40px 0 -35px;
   }
   .footer23 {
     width: 100%;
     padding: 32px 16px 0;
   }
-  .footer23-1{
+  .footer23-1 {
     float: none;
   }
-  .footer23-21{
+  .footer23-21 {
     float: none;
   }
-  .footer23-22{
+  .footer23-22 {
     float: none;
   }
 }
-
