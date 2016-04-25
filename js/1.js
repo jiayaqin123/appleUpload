@@ -72,10 +72,12 @@ $(function(){
         now=next;
     }
     $wheel.hover(
-        function(){
+        function(e){
+            stopDef(e);
             clearInterval(t);
         },
-        function(){
+        function(e){
+            stopDef(e);
             t=setInterval(move,2000);
         }
     );
@@ -107,8 +109,8 @@ $(function(){
         $btnItem.eq(next).addClass("btnItemHot");
         now=next;
     });
-    $btnItem.click(function(i,obj){
-
+    $btnItem.click(function(e){
+        stopDef(e);
         var index=$(this).index();
        // console.log(index);
         if(now<index){
@@ -145,7 +147,8 @@ $(function(){
         console.log($(window).width());
         var flag=true;
        //注意把判断条件放在click 的里面，因为要清除的是click事件
-            $foot1Title.click(function(){
+            $foot1Title.click(function(e){
+                stopDef(e);
                 if($(window).width()>767){
                     return false;
                 }else {
