@@ -166,27 +166,47 @@ $(function(){
 
             });
     });*/
+    var flag=true;
+    //注意把判断条件放在click 的里面，因为要清除的是click事件
+    $foot1Title.click(function(e){
+        stopDef(e);
+        if(document.documentElement.clientWidth>767){
+            return false;
+        }else {
+            var index = $foot1Title.index($(this));
+            if (flag) {
+                flag = false;
+                $foot1Title.eq(index).css({borderBottom: "none"});
+                $foot1Content.eq(index).slideDown(500);
+            } else {
+                flag = true;
+                $foot1Title.eq(index).css({borderBottom: "1px solid #e3e3e3"});
+                $foot1Content.eq(index).slideUp(500);
+            }
+        }
+
+    });
 
 
 
-        var flag=true;
-        //注意把判断条件放在click 的里面，因为要清除的是click事件
-        $foot1Title.click(function(e){
-            stopDef(e);
-          
-                var index = $foot1Title.index($(this));
-                if (flag) {
-                    flag = false;
-                    $foot1Title.eq(index).css({borderBottom: "none"});
-                    $foot1Content.eq(index).slideDown(500);
-                } else {
-                    flag = true;
-                    $foot1Title.eq(index).css({borderBottom: "1px solid #e3e3e3"});
-                    $foot1Content.eq(index).slideUp(500);
-                }
-
-
-        });
+        //var flag=true;
+        ////注意把判断条件放在click 的里面，因为要清除的是click事件
+        //$foot1Title.click(function(e){
+        //    stopDef(e);
+        //
+        //        var index = $foot1Title.index($(this));
+        //        if (flag) {
+        //            flag = false;
+        //            $foot1Title.eq(index).css({borderBottom: "none"});
+        //            $foot1Content.eq(index).slideDown(500);
+        //        } else {
+        //            flag = true;
+        //            $foot1Title.eq(index).css({borderBottom: "1px solid #e3e3e3"});
+        //            $foot1Content.eq(index).slideUp(500);
+        //        }
+        //
+        //
+        //});
 
 
 
