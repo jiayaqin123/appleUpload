@@ -30,11 +30,14 @@ $(function(){
         if(index==1){
             $btnOne.css({display:"block"});
             $btnTwo.css({display:"none"});
+            $maxNav.css({height:44});
             $maxNav.slideUp(500);
         }else if(index==2){
             $btnTwo.css({display:"block"});
             $btnOne.css({display:"none"});
+            $maxNav.css({height:document.documentElement.clientHeight});
             $maxNav.slideDown(500);
+
         }
         //$maxNav.slideToggle(500);
     });
